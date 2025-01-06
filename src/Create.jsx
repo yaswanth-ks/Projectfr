@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Create.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const Create = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('https://project-x6ig.onrender.com/user/create', { name, email, address })
             .then(result => {
                 console.log(result.data.users);
+                navigate('/');
             })
             .catch(error => {
                 console.error("Error creating user:", error);
