@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import "./Users.css";
 const Users = () => {
     const [users, setUsers] = useState([]);
 
@@ -17,10 +17,10 @@ const Users = () => {
     }, []);
 
     return (
-        <div>
+        <div class="table-container">
             <h1>Users</h1>
             <Link to="/create">Create User</Link>
-            <table>
+            <table class="my-table">
                 <thead>
                     <tr>
                         <th>Name</th>

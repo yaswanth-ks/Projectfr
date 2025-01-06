@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Create.css';
+
 
 const Create = () => {
     const [name, setName] = useState('');
@@ -18,39 +20,39 @@ const Create = () => {
     };
 
     return (
+        <div className="container">
+    <h1>Create User</h1>
+    <form onSubmit={handleSubmit}>
         <div>
-            <h1>Create The User</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Name</label>
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label>Address</label>
-                    <input
-                        type="text"
-                        placeholder="Address"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                    />
-                </div>
-                <button type="submit">Submit</button>
-            </form>
+            <input 
+                type="text" 
+                placeholder=" " 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+            />
+            <label>Name</label>
         </div>
+        <div>
+            <input 
+                type="email" 
+                placeholder=" " 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+            />
+            <label>Email</label>
+        </div>
+        <div>
+            <input 
+                type="text" 
+                placeholder=" " 
+                value={address} 
+                onChange={(e) => setAddress(e.target.value)} 
+            />
+            <label>Address</label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
     );
 };
 

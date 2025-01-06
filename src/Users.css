@@ -1,61 +1,86 @@
-/* Styles for the Users component */
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-  }
-  
-  thead {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-  }
-  
-  tbody tr:hover {
-    background-color: #f0f8ff;
-  }
-  
-  th {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  td a {
-    color: #007bff;
-    text-decoration: none;
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  
-  td a:hover {
-    text-decoration: underline;
-  }
-  
-  button {
-    padding: 8px 12px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  button:hover {
-    background-color: #e60000;
-  }
+/* Table Container for responsiveness */
+.table-container {
+    overflow-x: auto; /* Adds horizontal scrolling for small screens */
+    margin: 20px 0; /* Adds spacing around the table */
+}
+
+/* Basic Table Styling */
+.my-table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Removes double borders */
+    border-spacing: 0; /* Ensures no extra spacing between cells */
+    font-size: 16px; /* Adjust the font size */
+    text-align: left; /* Align text to the left */
+}
+
+/* Table Header Styling */
+.my-table th {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Darker text color */
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Spacing inside header cells */
+    border: 1px solid #ddd; /* Borders for headers */
+}
+
+/* Table Body Styling */
+.my-table td {
+    padding: 10px; /* Spacing inside data cells */
+    border: 1px solid #ddd; /* Borders for cells */
+    color: #555; /* Text color for data */
+}
+
+/* Row Hover Effect */
+.my-table tbody tr:hover {
+    background-color: #f9f9f9; /* Slightly lighter background on hover */
+}
+/* General Button Styling */
+.button {
+    padding: 8px 16px; /* Adjust padding for a balanced size */
+    font-size: 14px; /* Set a standard font size */
+    border: none; /* Remove default borders */
+    border-radius: 4px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    margin: 5px; /* Add spacing between buttons */
+    display: inline-block; /* Ensure buttons stay inline */
+    text-align: center; /* Center-align text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Specific Styles for Update Button */
+.button-update {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+}
+
+/* Specific Styles for Delete Button */
+.button-delete {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+}
+
+/* Add Hover Effects */
+.button:hover {
+    opacity: 0.9; /* Slightly dim on hover */
+}
+
+/* Responsive Buttons */
+@media (max-width: 600px) {
+    .button {
+        font-size: 12px; /* Smaller font size for small screens */
+        padding: 6px 12px; /* Adjust padding */
+    }
+}
+
+/* Alternate Row Colors */
+.my-table tbody tr:nth-child(odd) {
+    background-color: #fafafa; /* Lighter row for odd rows */
+}
+
+/* Table for Small Screens */
+@media (max-width: 600px) {
+    .my-table th,
+    .my-table td {
+        font-size: 14px; /* Smaller font size for small screens */
+        padding: 8px; /* Reduced padding */
+    }
+}
